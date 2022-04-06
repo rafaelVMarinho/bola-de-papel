@@ -15,15 +15,14 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1500, 700);
 
-	rectMode(CENTER);
-	ellipseMode(RADIUS);
+	
 	engine = Engine.create();
 	world = engine.world;
 
 	//Crie os Corpos Aqui.
-	fill()
+	
 	rectMode(CENTER);
 	ellipseMode(RADIUS);
 	Engine.run(engine);
@@ -33,8 +32,7 @@ function setup() {
 	
 	
 
-	  block1 = Bodies.circle(220,10,10,block1_options);
-  World.add(world,wall);
+	  
 
   var bola_options= {
 	isStatic:false ,
@@ -53,13 +51,16 @@ function setup() {
   World.add(world,bola);
 groundObj=new Ground(width/2,670,width,20)
 leftSide = new Ground(1100,600,20,120);
+rigthSide = new Ground(1400,600,20,120);
 }
 function draw() {
   rectMode(CENTER);
   background(0);
+  leftSide.show()
+ rigthSide.show() 
   
-  drawSprites();
- groundobj.show()
+ groundObj.show()
+ ellipse(bola.position.x,bola.position.y,20)
 }
 
 
